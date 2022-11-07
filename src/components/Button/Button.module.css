@@ -1,0 +1,9 @@
+.Button {
+    padding: 8px 20px;
+    border-radius: 2px;
+  }
+  
+  .Button:hover,
+  .Button:focus {
+    background-color: #307a9f;
+  }
