@@ -1,4 +1,4 @@
-.btn {
+.button {
   padding: 8px 16px;
   border-radius: 2px;
   background-color: #ccb0ee;
@@ -22,7 +22,7 @@
 }
   
   
-  .btn:hover,
-  .btn:focus {
+  .button:hover,
+  .button:focus {
     background-color: #d9ec9a;
   }

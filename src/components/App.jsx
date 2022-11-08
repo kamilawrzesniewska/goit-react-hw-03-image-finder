@@ -9,20 +9,21 @@ import { fetchImages } from './Api/Api';
 
 const INITIAL_STATE = {
   images: [],
-  search: '',
   error: null,
   isModalOpen: false,
   isLoading: false,
-  largeImage: '',
+  search: '',
   page: 1,
+  largeImage: '',
 };
 
 export class App extends Component {
   state = { ...INITIAL_STATE };
 
-  handleSubmit = e => {
-    e.preventDefault();
-    const form = e.currentTarget;
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
     const input = form.elements.input.value;
     this.setState({ images: [], search: input, page: 1 });
     form.reset();
@@ -52,18 +53,19 @@ export class App extends Component {
 
   async componentDidMount() {
     this.setState({ images: [], page: 1 });
+    // console.log(this.state.images);
   }
 
   componentWillUnmount() {
     document.removeEventListener('keyup', e => {});
   }
 
-  handleImageClick = e => {
-    this.setState({
-      modalOpen: true,
-      modalAlt: e.target.alt,
-      modalImg: e.target.name,
+  handleImageClick = imageID => {
+    const element = this.state.images.filter(image => {
+      return image.id === imageID;
     });
+    const clickImg = element[0];
+    this.setState({ isModalOpen: true, largeImage: clickImg });
   };
 
   closeModal = () => {
@@ -88,8 +90,8 @@ export class App extends Component {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr',
-          gridGap: '20px',
-          paddingBottom: '30px',
+          gridGap: '16px',
+          paddingBottom: '24px',
         }}
       >
         {isModalOpen ? (
@@ -113,5 +115,3 @@ export class App extends Component {
     );
   }
 }
-
-
