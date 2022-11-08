@@ -10,7 +10,7 @@ export const Loader = () => {
         width="80"
         wrapperStyle={{}}
         color="#567342"
-        ariaLabel="oval-loading"
+        ariaLabel="tail-spin-loading"
       />
     </div>
   );
