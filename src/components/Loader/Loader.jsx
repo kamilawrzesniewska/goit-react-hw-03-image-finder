@@ -1,16 +1,16 @@
 import styles from './Loader.module.css';
-import { TailSpin } from 'react-loader-spinner';
+import { BallTriangle } from 'react-loader-spinner';
 
 export const Loader = () => {
   return (
     <div className={styles.loader}>
-      <TailSpin
+      <BallTriangle
         visible={true}
         height="80"
         width="80"
         wrapperStyle={{}}
-        color="#567342"
-        ariaLabel="tail-spin-loading"
+        color="#123456"
+        ariaLabel="ball-triangle-loading"
       />
     </div>
   );
